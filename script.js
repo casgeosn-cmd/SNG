@@ -21,8 +21,17 @@ function onSpeak(event) {
     console.log(event);
     const msg = event.results[0][0].transcript;
     console.log(msg);
+    writeMessage(msg);
 }
 
 // listen to and handle the speech event 
 
 recognition.addEventListener('result', onSpeak);
+
+// See in the DOM what the user has spoken
+function writeMessage(msg) {
+    msgEl.innerHTML = `
+        <div>You said: </div>
+        <span class="box">${msg}</span>
+    `;
+}
