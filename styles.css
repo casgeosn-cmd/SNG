@@ -17,5 +17,8 @@ body {
     text-align: center;
     margin: 0;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    
+}
+
+h1, h3 {
+    margin: 0;
 }
