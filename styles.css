@@ -47,7 +47,8 @@
         }
 
     h1, h2, h3, p {
-        margin: 0;
+        margin: 5px;
+
         }
 
 
@@ -94,7 +95,8 @@
         padding: 20px;
         }
     .container {
-        background-color: #fff;
+        background-color: #2f3542;
+        color: #fff;
         border-radius: 10px;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1),0 6px rgba(0, 0, 0, 0.1);
         padding:60px 20px;
@@ -109,8 +111,8 @@
         margin: 50px auto;
         max-width: 600px;
         }
-    .btn {
-        background-color: #9f68e0;
+    .jokeBtn {
+        background-color: #000000;
         color: #fff;
         border: 0;
         border-radius: 10px;
@@ -120,9 +122,9 @@
         cursor: pointer;
         }
 
-    .btn:active {
+    .jokeBtn:active {
         transform: scale(0.98);
         }
-    .btn:focus {
+    .jokeBtn:focus {
         outline: 0;
         }    

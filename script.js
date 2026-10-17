@@ -75,7 +75,7 @@ function checkNumber(msg) {
         div.textContent = 'That is not a valid number';
         msgEl.innerHTML = '';
         msgEl.appendChild(div);
-        return;
+        
     }
 // edge cases
     if (msg === 'one' || msg === 'won') {
@@ -130,24 +130,39 @@ function checkNumber(msg) {
 
 
 ///// DAD JOKE SECTION
-const jokeEl = document.getElementById('joke');
-const jokeBtn = document.getElementById('jokeBtn');
+// const jokeEl = document.getElementById('joke');
+// const jokeBtn = document.getElementById('jokeBtn');
 
 
-    // refactor with async await
+//     // refactor with async await
 
-    async function generateJoke() {
-        const config = {
-            headers: {
-                Accept: 'application/json',
-            },
-        };
+//     async function generateJoke() {
+//         let config = {
+//             header: {
+//                 Accept: 'application/json',
+//             },
+//         };
     
-        const res= await fetch('https://icanhazdadjokee.com', config);
-        const data = await res.json();
+//         const res= await fetch('https://icanhazdadjokee.com/', config);
+//         const data = await res.json();
         
-        jokeEl.textContent = data.joke;
-        }
+//         jokeEl.textContent = data.joke;
+//         }
 
-        //listeners
-        jokeBtn.addEventListener('click', generateJoke);
+//         //listeners
+//         jokeBtn.addEventListener('click', generateJoke);
+
+document.getElementById('jokeBtn').addEventListener('click', generateJoke);
+
+async function generateJoke() {
+    let config = {
+        headers: {
+        Accept: 'application/json',
+    },
+};
+
+const res = await fetch('https://icanhazdadjoke.com/', config);
+const data = await res.json();
+console.log(data.joke);
+document.getElementById('joke').innerHTML = data.joke;
+}
