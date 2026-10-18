@@ -130,39 +130,25 @@ function checkNumber(msg) {
 
 
 ///// DAD JOKE SECTION
-// const jokeEl = document.getElementById('joke');
-// const jokeBtn = document.getElementById('jokeBtn');
+const jokeEl = document.getElementById('joke');
+const jokeBtn = document.getElementById('jokeBtn');
 
 
-//     // refactor with async await
-
-//     async function generateJoke() {
-//         let config = {
-//             header: {
-//                 Accept: 'application/json',
-//             },
-//         };
+    // refactor with async await
+jokeBtn.addEventListener('click', generateJoke);
+    async function generateJoke() {
+        let config = {
+            header: {
+                Accept:'application/json',
+            },
+        };
     
-//         const res= await fetch('https://icanhazdadjokee.com/', config);
-//         const data = await res.json();
+        const res= await fetch('https://icanhazdadjoke.com/', config);
+        const data = await res.json();
         
-//         jokeEl.textContent = data.joke;
-//         }
+        jokeEl.textContent = data.joke;
+        }
 
-//         //listeners
-//         jokeBtn.addEventListener('click', generateJoke);
+        //listeners
+        
 
-document.getElementById('jokeBtn').addEventListener('click', generateJoke);
-
-async function generateJoke() {
-    let config = {
-        headers: {
-        Accept: 'application/json',
-    },
-};
-
-const res = await fetch('https://icanhazdadjoke.com/', config);
-const data = await res.json();
-console.log(data.joke);
-document.getElementById('joke').innerHTML = data.joke;
-}
